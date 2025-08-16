@@ -13,6 +13,7 @@ RUN mkdir -p ./transaction-logs/
 ADD target/reminder-api-0.0.1.jar ./reminder-api-0.0.1.jar
 
 
-ENTRYPOINT ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8002", "-Djava.security.egd=file:/dev/./urandom","-jar", "reminder-api-0.0.1.jar"]
+ENTRYPOINT ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8002", "-Djava.security.egd=file:/dev/./urandom", "-jar", "reminder-api-0.0.1.jar"]
+
 
 
